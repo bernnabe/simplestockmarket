@@ -1,4 +1,4 @@
-﻿using SuperSimpleStockMarket.Net.Domain.Infraestructure;
+﻿using SuperSimpleStockMarket.Net.Common.Patterns.Command;
 using System.Collections.Generic;
 using System.Linq;
 

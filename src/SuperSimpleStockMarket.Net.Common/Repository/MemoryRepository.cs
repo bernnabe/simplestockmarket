@@ -1,10 +1,9 @@
-﻿using System;
+﻿using SuperSimpleStockMarket.Net.Common.Domain;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using SuperSimpleStockMarket.Net.Domain;
 
-namespace SuperSimpleStockMarket.Net.Repository.Infraestructure
+namespace SuperSimpleStockMarket.Net.Common.Respository
 {
     public abstract class MemoryRepository<TDomain> : IRepository<TDomain>
         where TDomain : DomainBase

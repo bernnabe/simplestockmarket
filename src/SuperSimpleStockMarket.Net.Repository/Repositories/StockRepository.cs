@@ -1,9 +1,7 @@
-﻿using SuperSimpleStockMarket.Net.Domain;
-using SuperSimpleStockMarket.Net.Repository.Infraestructure;
-using System;
-using System.Linq;
-using System.Collections;
+﻿using SuperSimpleStockMarket.Net.Common.Respository;
+using SuperSimpleStockMarket.Net.Domain;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SuperSimpleStockMarket.Net.Repository.Repositories
 {

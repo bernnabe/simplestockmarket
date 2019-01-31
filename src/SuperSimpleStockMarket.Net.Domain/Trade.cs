@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperSimpleStockMarket.Net.Common.Domain;
+using System;
 
 namespace SuperSimpleStockMarket.Net.Domain
 {

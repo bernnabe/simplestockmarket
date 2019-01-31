@@ -1,8 +1,6 @@
-﻿using SuperSimpleStockMarket.Net.Domain.Commands;
-using SuperSimpleStockMarket.Net.Domain.Infraestructure;
-using System;
+﻿using SuperSimpleStockMarket.Net.Common.Patterns.Command;
+using SuperSimpleStockMarket.Net.Domain.Commands;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SuperSimpleStockMarket.Net.Domain.Calculator
 {

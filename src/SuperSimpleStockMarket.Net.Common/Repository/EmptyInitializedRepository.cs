@@ -1,9 +1,7 @@
-﻿using SuperSimpleStockMarket.Net.Domain;
-using System;
+﻿using SuperSimpleStockMarket.Net.Common.Domain;
 using System.Collections.Generic;
-using System.Text;
 
-namespace SuperSimpleStockMarket.Net.Repository.Infraestructure
+namespace SuperSimpleStockMarket.Net.Common.Respository
 {
     public class EmptyInitializedRepository<TDomain> : MemoryRepository<TDomain>
         where TDomain : DomainBase

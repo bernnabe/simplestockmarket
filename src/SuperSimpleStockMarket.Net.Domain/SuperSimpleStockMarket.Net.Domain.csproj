@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SuperSimpleStockMarket.Net.Common\SuperSimpleStockMarket.Net.Common.csproj" />
+  </ItemGroup>
+
 </Project>

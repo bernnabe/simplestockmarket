@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SuperSimpleStockMarket.Net.Common\SuperSimpleStockMarket.Net.Common.csproj" />
     <ProjectReference Include="..\SuperSimpleStockMarket.Net.Domain\SuperSimpleStockMarket.Net.Domain.csproj" />
   </ItemGroup>
 

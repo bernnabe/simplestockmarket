@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SuperSimpleStockMarket.Net.Service.Impl.Infraestructure
+namespace SuperSimpleStockMarket.Net.Common.Service
 {
     public class OperationResultBase 
     {

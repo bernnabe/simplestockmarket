@@ -1,6 +1,5 @@
-﻿using SuperSimpleStockMarket.Net.Domain;
-using SuperSimpleStockMarket.Net.Service.Impl.Infraestructure;
-using System;
+﻿using SuperSimpleStockMarket.Net.Common.Service;
+using SuperSimpleStockMarket.Net.Domain;
 
 namespace SuperSimpleStockMarket.Net.Service
 {

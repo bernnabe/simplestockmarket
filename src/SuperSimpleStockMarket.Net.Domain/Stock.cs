@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SuperSimpleStockMarket.Net.Common.Domain;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SuperSimpleStockMarket.Net.Domain
 {
