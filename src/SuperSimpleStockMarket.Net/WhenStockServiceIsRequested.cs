@@ -49,7 +49,9 @@ namespace SuperSimpleStockMarket.Net
             IStockService service = new StockService();
 
             var result = service.CalculateVolumeWeightedPrice("TEA");
-            Assert.IsTrue(result.Result > 0);
+            
+            //The repo is empty
+            Assert.IsFalse(result.Succeded);
         }
 
         [TestMethod]
