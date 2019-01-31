@@ -32,9 +32,7 @@ namespace SuperSimpleStockMarket.Net.Service.Impl.Infraestructure
             };
         }
     }
-
-
-
+       
     public class OperationResult<T> : OperationResultBase
     {
         public T Result { get; set; }

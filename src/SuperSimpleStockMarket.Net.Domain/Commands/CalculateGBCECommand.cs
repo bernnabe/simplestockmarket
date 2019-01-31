@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace SuperSimpleStockMarket.Net.Domain.Commands
 {
+    /// <summary>
+    /// CalculateGBCECommand
+    /// </summary>
     internal class CalculateGBCECommand : ICommand
     {
         private readonly List<Stock> _Stocks = null;

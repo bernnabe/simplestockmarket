@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace SuperSimpleStockMarket.Net.Domain.Commands
 {
+    /// <summary>
+    /// CalculateVolumeWeightedStockPriceCommand 
+    /// </summary>
     internal class CalculateVolumeWeightedStockPriceCommand : ICommand
     {
         private readonly List<Trade> _trades = null;

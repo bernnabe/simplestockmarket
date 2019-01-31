@@ -3,6 +3,9 @@ using System;
 
 namespace SuperSimpleStockMarket.Net.Domain.Commands
 {
+    /// <summary>
+    /// CalculateDividenYieldCommand 
+    /// </summary>
     internal class CalculateDividenYieldCommand : ICommand
     {
         private readonly Stock _stock = null;

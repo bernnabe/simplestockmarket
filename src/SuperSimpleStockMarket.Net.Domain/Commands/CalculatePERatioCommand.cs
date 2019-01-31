@@ -2,6 +2,9 @@
 
 namespace SuperSimpleStockMarket.Net.Domain.Commands
 {
+    /// <summary>
+    /// CalculatePERatioCommand
+    /// </summary>
     internal class CalculatePERatioCommand : ICommand
     {
         private readonly Stock _stock = null;
