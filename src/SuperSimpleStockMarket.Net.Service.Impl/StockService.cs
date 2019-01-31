@@ -1,15 +1,16 @@
 ﻿using SuperSimpleStockMarket.Net.Domain;
-using SuperSimpleStockMarket.Net.Domain.Commands;
-using SuperSimpleStockMarket.Net.Domain.Infraestructure;
-using SuperSimpleStockMarket.Net.Repository.Repositories;
-using System;
-using System.Linq;
-using System.Collections.Generic;
 using SuperSimpleStockMarket.Net.Domain.Calculator;
+using SuperSimpleStockMarket.Net.Repository.Repositories;
 using SuperSimpleStockMarket.Net.Service.Impl.Infraestructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SuperSimpleStockMarket.Net.Service.Impl
 {
+    /// <summary>
+    /// Example Assignment – Super Simple Stock Market
+    /// </summary>
     public class StockService : IStockService
     {
         /// <summary>
@@ -25,7 +26,7 @@ namespace SuperSimpleStockMarket.Net.Service.Impl
 
                 Stock stock = new StockRepository().GetBySymbol(symbol);
 
-                if (stock == null) throw new ArgumentException("stock doesnt exists");
+                if (stock == null) throw new ArgumentException("stock doesn't exists");
                 if (price <= 0) throw new ArgumentException("price must be grater than zero");
 
                 return OperationResult<double>.Ok(Calculator.CalculateDividendYield(stock, price));
@@ -49,7 +50,7 @@ namespace SuperSimpleStockMarket.Net.Service.Impl
 
                 Stock stock = new StockRepository().GetBySymbol(symbol);
 
-                if (stock == null) throw new ArgumentException("stock doesnt exists");
+                if (stock == null) throw new ArgumentException("stock doesn't exists");
                 if (price <= 0) throw new ArgumentException("price must be grater than zero");
 
                 return OperationResult<double>.Ok(Calculator.CalculatePERatio(stock, price));
@@ -117,7 +118,7 @@ namespace SuperSimpleStockMarket.Net.Service.Impl
                 StockRepository repository = new StockRepository();
                 Stock stock = repository.GetBySymbol(symbol);
 
-                if (stock == null) throw new ArgumentException("stock doesnt exists");
+                if (stock == null) throw new ArgumentException("stock doesn't exists");
                 if (price <= 0) throw new ArgumentException("price must be grather than zero");
                 if (quantity <= 0) throw new ArgumentException("quantity must be grater than zero");
 
