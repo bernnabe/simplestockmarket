@@ -14,7 +14,8 @@ namespace SuperSimpleStockMarket.Net.Repository.Repositories
 
         public List<Trade> GetLast5MinutesTradesBySymbol(string symbol, DateTime dateRef)
         {
-            return Records.Where(c => dateRef.AddMinutes(-5) <= c.DateTime).ToList();
+            return Records.Where(c => dateRef.AddMinutes(-5) <= c.DateTime
+                                        && c.Stock.Symbol == symbol).ToList();
         }
     }
 }

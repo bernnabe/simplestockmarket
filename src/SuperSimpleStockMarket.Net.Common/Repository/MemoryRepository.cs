@@ -51,7 +51,7 @@ namespace SuperSimpleStockMarket.Net.Common.Respository
 
             if (data == null || !data.Any()) throw new Exception("Repository has not been initialized!");
 
-            Records.AddRange(Initialize());
+            Records.AddRange(data);
         }
 
         public abstract List<TDomain> Initialize();

@@ -5,6 +5,7 @@ namespace SuperSimpleStockMarket.Net.Domain
 {
     public class Trade : DomainBase
     {
+        public Stock Stock { get; set; }
         public TradeType TradeType { get; set; }
         public double Price { get; set; }
 
