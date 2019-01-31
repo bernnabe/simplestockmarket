@@ -11,6 +11,9 @@ namespace SuperSimpleStockMarket.Net.Domain.Commands
         private readonly Stock _stock = null;
         private readonly double _price;
 
+        private const string _COMMON = "COMMON";
+        private const string _PREFERRED = "PREFERRED";
+
         public CalculateDividenYieldCommand(Stock stock, double price)
         {
             _stock = stock;
@@ -24,9 +27,9 @@ namespace SuperSimpleStockMarket.Net.Domain.Commands
             //TODO: Podría ir en un Strategy 
             switch (_stock.Type)
             {
-                case "COMMON":
+                case _COMMON:
                     return DividendYieldCommon();
-                case "PREFERRED":
+                case _PREFERRED:
                     return DividendYieldPreferred();
                 default:
                     throw new ArgumentException("Unknow stock type");

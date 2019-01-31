@@ -40,16 +40,26 @@ namespace SuperSimpleStockMarket.Net
             IStockService service = new StockService();
 
             var result = service.CalculateDividendYield("TEA", 123);
-            Assert.IsTrue(result.Result == 0);
+            Assert.AreEqual(result.Result, 0);
         }
 
         [TestMethod]
-        public void CalculateVolumeWeightedPrice(string symbol)
+        public void CalculateVolumeWeightedPrice()
         {
             IStockService service = new StockService();
 
             var result = service.CalculateVolumeWeightedPrice("TEA");
             Assert.IsTrue(result.Result > 0);
+        }
+
+        [TestMethod]
+        public void AddTradeToStock()
+        {
+            IStockService service = new StockService();
+
+            var result = service.CalculateVolumeWeightedPrice("TEA");
+            Assert.IsTrue(result.Succeded);
+
         }
     }
 }
