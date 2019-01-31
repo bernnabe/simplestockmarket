@@ -16,7 +16,7 @@
     <ProjectReference Include="..\SuperSimpleStockMarket.Net.Common\SuperSimpleStockMarket.Net.Common.csproj" />
     <ProjectReference Include="..\SuperSimpleStockMarket.Net.Domain\SuperSimpleStockMarket.Net.Domain.csproj" />
     <ProjectReference Include="..\SuperSimpleStockMarket.Net.Repository\SuperSimpleStockMarket.Net.Repository.csproj" />
-    <ProjectReference Include="..\SuperSimpleStockMarket.Net.Service.Impl\SuperSimpleStockMarket.Net.Service.csproj" />
+    <ProjectReference Include="..\SuperSimpleStockMarket.Net.Service\SuperSimpleStockMarket.Net.Service.csproj" />
   </ItemGroup>
 
 </Project>
