@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SuperSimpleStockMarket.Net.Domain\SuperSimpleStockMarket.Net.Domain.csproj" />
+    <ProjectReference Include="..\SuperSimpleStockMarket.Net.Repository\SuperSimpleStockMarket.Net.Repository.csproj" />
+    <ProjectReference Include="..\SuperSimpleStockMarket.Net.Service\SuperSimpleStockMarket.Net.Service.csproj" />
+  </ItemGroup>
+
+</Project>
