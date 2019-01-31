@@ -57,9 +57,20 @@ namespace SuperSimpleStockMarket.Net
         {
             IStockService service = new StockService();
 
-            var result = service.CalculateVolumeWeightedPrice("TEA");
+            var result = service.AddTrade("TEA", Domain.TradeType.BUY, 12.0, 1);
+            
             Assert.IsTrue(result.Succeded);
+        }
 
+        [TestMethod]
+        public void AddTradeToStockWithInvalidPrice()
+        {
+            IStockService service = new StockService();
+
+            var result = service.AddTrade("TEA", Domain.TradeType.BUY, 0, 1);
+
+            Assert.AreEqual(result.Errors.Count, 1);
+            Assert.IsFalse(result.Succeded);
         }
     }
 }
