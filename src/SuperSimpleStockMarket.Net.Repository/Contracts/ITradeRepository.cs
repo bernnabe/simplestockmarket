@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SuperSimpleStockMarket.Net.Common.Respository;
 using SuperSimpleStockMarket.Net.Domain;
 
-namespace SuperSimpleStockMarket.Net.Repository.Repositories
+namespace SuperSimpleStockMarket.Net.Repository.Repositories.Contracts
 {
     public interface ITradeRepository : IRepository<Trade>
     {

@@ -1,7 +1,7 @@
 ﻿using SuperSimpleStockMarket.Net.Common.Service;
 using SuperSimpleStockMarket.Net.Domain;
 
-namespace SuperSimpleStockMarket.Net.Service
+namespace SuperSimpleStockMarket.Net.Service.Contracts
 {
     public interface IStockService
     {

@@ -1,5 +1,6 @@
 ﻿using SuperSimpleStockMarket.Net.Common.Respository;
 using SuperSimpleStockMarket.Net.Domain;
+using SuperSimpleStockMarket.Net.Repository.Repositories.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,8 @@
 ﻿using SuperSimpleStockMarket.Net.Common.Service;
 using SuperSimpleStockMarket.Net.Domain;
 using SuperSimpleStockMarket.Net.Domain.Calculator;
-using SuperSimpleStockMarket.Net.Repository.Repositories;
+using SuperSimpleStockMarket.Net.Repository.Repositories.Contracts;
+using SuperSimpleStockMarket.Net.Service.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
