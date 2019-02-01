@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SuperSimpleStockMarket.Net.Repository.Repositories;
+using SuperSimpleStockMarket.Net.Repository.Repositories.Contracts;
 using SuperSimpleStockMarket.Net.Service;
+using SuperSimpleStockMarket.Net.Service.Contracts;
 
 namespace SuperSimpleStockMarket.Net
 {

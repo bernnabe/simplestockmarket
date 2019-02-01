@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SuperSimpleStockMarket.Net.Domain;
 using SuperSimpleStockMarket.Net.Repository.Repositories;
+using SuperSimpleStockMarket.Net.Repository.Repositories.Contracts;
 using System;
 using System.Collections.Generic;
 
