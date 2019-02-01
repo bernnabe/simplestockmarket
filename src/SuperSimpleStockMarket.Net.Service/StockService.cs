@@ -15,11 +15,13 @@ namespace SuperSimpleStockMarket.Net.Service
     {
         private readonly StockRepository _stockRepository = null;
         private readonly TradeRepository _tradeRepository = null;
+
         public StockService()
         {
             _stockRepository = new StockRepository();
             _tradeRepository = new TradeRepository();
         }
+
         /// <summary>
         /// i.	Given any price as input, calculate the dividend yield
         /// </summary>

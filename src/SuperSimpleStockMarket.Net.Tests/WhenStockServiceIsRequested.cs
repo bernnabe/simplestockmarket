@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SuperSimpleStockMarket.Net.Service;
-using SuperSimpleStockMarket.Net.Service;
 
 namespace SuperSimpleStockMarket.Net
 {
