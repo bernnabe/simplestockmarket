@@ -9,16 +9,13 @@ namespace SuperSimpleStockMarket.Net
     [TestClass]
     public class WhenStockServiceIsRequested
     {
-        private readonly IStockRepository _stockRepository = null;
-        private readonly ITradeRepository _tradeRepository = null;
-
         private readonly IStockService _stockService = null;
         public WhenStockServiceIsRequested()
         {
-            _stockRepository = new StockRepository();
-            _tradeRepository = new TradeRepository();
+            IStockRepository stockRepository = new StockRepository();
+            ITradeRepository tradeRepository = new TradeRepository();
 
-            _stockService = new StockService(_stockRepository, _tradeRepository);
+            _stockService = new StockService(stockRepository, tradeRepository);
         }
 
         [TestMethod]
