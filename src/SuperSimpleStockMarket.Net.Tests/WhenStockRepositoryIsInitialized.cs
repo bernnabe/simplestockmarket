@@ -51,6 +51,7 @@ namespace SuperSimpleStockMarket.Net
 
             stock.AddTrade(new Trade
             {
+                Stock = stock,
                 DateTime = DateTime.Now,
                 Price = 1,
                 Quantity = 1,
