@@ -9,35 +9,37 @@ namespace SuperSimpleStockMarket.Net
     [TestClass]
     public class WhenStockRepositoryIsInitialized
     {
+        private readonly IStockRepository _stockRepository = null;
+
+        public WhenStockRepositoryIsInitialized()
+        {
+            _stockRepository = new StockRepository();
+        }
+
+
         [TestMethod]
         public void InitializingStockRepository()
         {
-            StockRepository repository = new StockRepository();
-
-            Assert.IsTrue(repository.GetAll().Count > 0);
+            Assert.IsTrue(_stockRepository.GetAll().Count > 0);
         }
 
         [TestMethod]
         public void AddingStockToStockRepository()
         {
-            StockRepository repository = new StockRepository();
-
-            repository.Create(new Domain.Stock
+            _stockRepository.Create(new Domain.Stock
             {
                 Id = 99,
                 Symbol = "TEST",
                 Trades = new List<Trade>()
             });
 
-            Assert.IsTrue(repository.GetBySymbol("TEST") != null);
+            Assert.IsTrue(_stockRepository.GetBySymbol("TEST") != null);
         }
 
         [TestMethod]
         public void GettingStockFromRepositoryBySymbol()
         {
-            StockRepository repository = new StockRepository();
-
-            Assert.IsTrue(repository.GetBySymbol("TEA") != null);
+            Assert.IsTrue(_stockRepository.GetBySymbol("TEA") != null);
         }
 
 
@@ -45,8 +47,7 @@ namespace SuperSimpleStockMarket.Net
         public void AddingTradeToStockRepository()
         {
             string symbol = "TEA";
-            StockRepository repository = new StockRepository();
-            Stock stock = repository.GetBySymbol(symbol);
+            Stock stock = _stockRepository.GetBySymbol(symbol);
 
             stock.AddTrade(new Trade
             {
@@ -56,9 +57,9 @@ namespace SuperSimpleStockMarket.Net
                 TradeType = TradeType.BUY,
             });
 
-            repository.Update(stock);
+            _stockRepository.Update(stock);
 
-            Assert.IsTrue(repository.GetBySymbol(symbol).Trades.Count > 0);
+            Assert.IsTrue(_stockRepository.GetBySymbol(symbol).Trades.Count > 0);
         }
     }
 }
