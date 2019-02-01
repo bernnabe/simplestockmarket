@@ -13,6 +13,13 @@ namespace SuperSimpleStockMarket.Net.Service
     /// </summary>
     public class StockService : IStockService
     {
+        private readonly StockRepository _stockRepository = null;
+        private readonly TradeRepository _tradeRepository = null;
+        public StockService()
+        {
+            _stockRepository = new StockRepository();
+            _tradeRepository = new TradeRepository();
+        }
         /// <summary>
         /// i.	Given any price as input, calculate the dividend yield
         /// </summary>
@@ -24,7 +31,7 @@ namespace SuperSimpleStockMarket.Net.Service
             {
                 if (string.IsNullOrWhiteSpace(symbol)) throw new ArgumentException("symbol is empty");
 
-                Stock stock = new StockRepository().GetBySymbol(symbol);
+                Stock stock =  _stockRepository.GetBySymbol(symbol);
 
                 if (stock == null) throw new ArgumentException("stock doesn't exists");
                 if (price <= 0) throw new ArgumentException("price must be grater than zero");
@@ -48,7 +55,7 @@ namespace SuperSimpleStockMarket.Net.Service
             {
                 if (string.IsNullOrWhiteSpace(symbol)) throw new ArgumentException("symbol is empty");
 
-                Stock stock = new StockRepository().GetBySymbol(symbol);
+                Stock stock = _stockRepository.GetBySymbol(symbol);
 
                 if (stock == null) throw new ArgumentException("stock doesn't exists");
                 if (price <= 0) throw new ArgumentException("price must be grater than zero");
@@ -72,7 +79,7 @@ namespace SuperSimpleStockMarket.Net.Service
             {
                 if (string.IsNullOrWhiteSpace(symbol)) throw new ArgumentException("symbol is empty");
 
-                List<Trade> trades = new TradeRepository().GetLast5MinutesTradesBySymbol(symbol, DateTime.Now);
+                List<Trade> trades = _tradeRepository.GetLast5MinutesTradesBySymbol(symbol, DateTime.Now);
 
                 if (trades == null || !trades.Any()) throw new ArgumentException("no trades to calculate");
 
@@ -92,7 +99,7 @@ namespace SuperSimpleStockMarket.Net.Service
         {
             try
             {
-                List<Stock> stocks = new StockRepository().GetAll();
+                List<Stock> stocks = _stockRepository.GetAll();
 
                 return OperationResult<double>.Ok(Calculator.CalculateGBCE(stocks));
             }
@@ -115,8 +122,7 @@ namespace SuperSimpleStockMarket.Net.Service
             {
                 if (string.IsNullOrWhiteSpace(symbol)) throw new ArgumentException("symbol is empty");
 
-                StockRepository repository = new StockRepository();
-                Stock stock = repository.GetBySymbol(symbol);
+                Stock stock = _stockRepository.GetBySymbol(symbol);
 
                 if (stock == null) throw new ArgumentException("stock doesn't exists");
                 if (price <= 0) throw new ArgumentException("price must be grater than zero");
@@ -130,7 +136,7 @@ namespace SuperSimpleStockMarket.Net.Service
                     Quantity = quantity
                 });
 
-                repository.Update(stock);
+                _stockRepository.Update(stock);
 
                 return OperationResult.Ok();
             }
