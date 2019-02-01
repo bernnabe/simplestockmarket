@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace SuperSimpleStockMarket.Net.Repository.Repositories
 {
-    public class TradeRepository : EmptyInitializedRepository<Trade>
+    public class TradeRepository : EmptyInitializedRepository<Trade>, ITradeRepository
     {
         public TradeRepository() : base()
         {

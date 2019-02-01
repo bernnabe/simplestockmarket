@@ -13,13 +13,13 @@ namespace SuperSimpleStockMarket.Net.Service
     /// </summary>
     public class StockService : IStockService
     {
-        private readonly StockRepository _stockRepository = null;
-        private readonly TradeRepository _tradeRepository = null;
+        private readonly IStockRepository _stockRepository = null;
+        private readonly ITradeRepository _tradeRepository = null;
 
-        public StockService()
+        public StockService(IStockRepository stockRepository, ITradeRepository tradeRepository)
         {
-            _stockRepository = new StockRepository();
-            _tradeRepository = new TradeRepository();
+            _stockRepository = stockRepository;
+            _tradeRepository = tradeRepository;
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace SuperSimpleStockMarket.Net.Service
             {
                 if (string.IsNullOrWhiteSpace(symbol)) throw new ArgumentException("symbol is empty");
 
-                Stock stock =  _stockRepository.GetBySymbol(symbol);
+                Stock stock = _stockRepository.GetBySymbol(symbol);
 
                 if (stock == null) throw new ArgumentException("stock doesn't exists");
                 if (price <= 0) throw new ArgumentException("price must be grater than zero");
@@ -132,6 +132,7 @@ namespace SuperSimpleStockMarket.Net.Service
 
                 stock.AddTrade(new Trade
                 {
+                    Stock = stock,
                     DateTime = DateTime.Now,
                     Price = price,
                     TradeType = tradeType,

@@ -1,4 +1,6 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SuperSimpleStockMarket.Net.Repository.Repositories;
 using SuperSimpleStockMarket.Net.Service;
 
 namespace SuperSimpleStockMarket.Net
@@ -6,49 +8,51 @@ namespace SuperSimpleStockMarket.Net
     [TestClass]
     public class WhenStockServiceIsRequested
     {
+        private readonly IStockRepository _stockRepository = null;
+        private readonly ITradeRepository _tradeRepository = null;
+
+        private readonly IStockService _stockService = null;
+        public WhenStockServiceIsRequested()
+        {
+            _stockRepository = new StockRepository();
+            _tradeRepository = new TradeRepository();
+
+            _stockService = new StockService(_stockRepository, _tradeRepository);
+        }
+
         [TestMethod]
         public void WhenCalculateDividendYieldIsInvokedForTEA()
         {
-            IStockService service = new StockService();
-
-            var result = service.CalculateDividendYield("TEA", 123);
+            var result = _stockService.CalculateDividendYield("TEA", 123);
             Assert.AreEqual(result.Result, 0);
         }
 
         [TestMethod]
         public void WhenCalculateDividendYieldIsInvokedForGIN()
         {
-            IStockService service = new StockService();
-
-            var result = service.CalculateDividendYield("GIN", 123);
+            var result = _stockService.CalculateDividendYield("GIN", 123);
             Assert.IsTrue(result.Result > 0);
         }
 
         [TestMethod]
         public void WhenCalculatePERatioIsInvokedForGIN()
         {
-            IStockService service = new StockService();
-
-            var result = service.CalculateDividendYield("GIN", 123);
+            var result = _stockService.CalculateDividendYield("GIN", 123);
             Assert.IsTrue(result.Result > 0);
         }
 
         [TestMethod]
         public void WhenCalculatePERatioIsInvokedForTEA()
         {
-            IStockService service = new StockService();
-
-            var result = service.CalculateDividendYield("TEA", 123);
+            var result = _stockService.CalculateDividendYield("TEA", 123);
             Assert.AreEqual(result.Result, 0);
         }
 
         [TestMethod]
         public void CalculateVolumeWeightedPrice()
         {
-            IStockService service = new StockService();
+            var result = _stockService.CalculateVolumeWeightedPrice("TEA");
 
-            var result = service.CalculateVolumeWeightedPrice("TEA");
-            
             //The repo is empty
             Assert.IsFalse(result.Succeded);
         }
@@ -56,19 +60,15 @@ namespace SuperSimpleStockMarket.Net
         [TestMethod]
         public void AddTradeToStock()
         {
-            IStockService service = new StockService();
+            var result = _stockService.AddTrade("TEA", Domain.TradeType.BUY, 12.0, 1);
 
-            var result = service.AddTrade("TEA", Domain.TradeType.BUY, 12.0, 1);
-            
             Assert.IsTrue(result.Succeded);
         }
 
         [TestMethod]
         public void AddTradeToStockWithInvalidPrice()
         {
-            IStockService service = new StockService();
-
-            var result = service.AddTrade("TEA", Domain.TradeType.BUY, 0, 1);
+            var result = _stockService.AddTrade("TEA", Domain.TradeType.BUY, 0, 1);
 
             Assert.AreEqual(result.Errors.Count, 1);
             Assert.IsFalse(result.Succeded);

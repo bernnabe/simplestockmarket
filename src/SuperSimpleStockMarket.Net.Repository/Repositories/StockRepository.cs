@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SuperSimpleStockMarket.Net.Repository.Repositories
 {
-    public class StockRepository : MemoryRepository<Stock>
+    public class StockRepository : MemoryRepository<Stock>, IStockRepository
     {
         public Stock GetBySymbol(string symbol)
         {
